@@ -1,4 +1,4 @@
-/*package com.bit603.a1;
+package com.bit603.a1;
 
 public class GameCards {
 
@@ -12,7 +12,7 @@ public class GameCards {
     private String artist_name;
     private boolean unfinished;
 
-    public gameCards(String card_id, String name, String effect_description, int level, int battle_power, int play_cost, int element, String artist_name, boolean unfinished){
+    public void gameCards(String card_id, String name, String effect_description, int level, int battle_power, int play_cost, int element, String artist_name, boolean unfinished){
         this.card_id = card_id;
         this.name = name;
         this.effect_description = effect_description;
@@ -96,4 +96,3 @@ public void setEffectDescription(String effect_description){
     }
 
 }
-*/

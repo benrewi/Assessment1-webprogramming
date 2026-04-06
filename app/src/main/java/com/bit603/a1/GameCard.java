@@ -1,7 +1,5 @@
 package com.bit603.a1;
 
-import android.content.Context;
-
 public class GameCard {
 
     private String card_id;
