@@ -45,3 +45,4 @@ public class GameCardScrollerRecyclerViewAdapter extends RecyclerView.Adapter<Ga
 
     }
 }
+/*END*/
