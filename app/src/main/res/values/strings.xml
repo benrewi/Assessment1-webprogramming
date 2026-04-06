@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="Typos">Assessment1</string>
+<resources>
+    <string name="app_name">Assessment 1</string>
     <string name="card_game_name">Card Vault Companion</string>
     <string name="developer_name">Developer: Ben Rewi</string>
     <string name="development_warning">This app is currently in development</string>
@@ -7,11 +7,12 @@
     <string name="app_version">App version 1.0</string>
     <string name="game_version">Game version: 1.0</string>
     <string name="developer_mode_activated">Developer mode activated</string>
-    <string name="btn_card_list">Card List</string>
-    <string name="btn_card_statistics">Card Statistics</string>
+    <string name="card_list">Card List</string>
+    <string name="card_statistics">Card Statistics</string>
+    <string name="card_details">Card Details</string>
     <string name="developer_mode_text">Developer mode…</string>
     <string name="main_image_description">Purple goblin warrior holding a spiked axe</string>
-    <string name="card_list_header">Card List</string>
+
 
     <string-array name="card_idArray">
         <item>001</item>
@@ -42,10 +43,10 @@
     <string-array name="effectArray">
         <item>When this monster is played, inflict 50 damage to all opponents</item>
         <item>Intimidate an enemy monster for two turns, preventing it from attacking or defending</item>
-        <item>Increase your defence by 100 for the next three turns</item>
+        <item>Increase your defense by 100 for the next three turns</item>
         <item>Deal 120 damage to all enemies, but this monster takes 30 damage after use</item>
         <item>Gain 50 battle power for each monster in the graveyard</item>
-        <item>Double your defence until the end of the opponents next turn</item>
+        <item>Double your defense until the end of the opponents next turn</item>
         <item>Drain 20 health from an enemy and heal your health by the same amount</item>
         <item>When summoned place a Forest Token on the battlefield that gives +20 battle power to all allies</item>
         <item>Increase your attack by 50 for each fire monster in play</item>

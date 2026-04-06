@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class CardListActivity extends AppCompatActivity {
 
@@ -13,6 +16,7 @@ public class CardListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_list);
+
 
         boolean isDevModeActive = getIntent().getBooleanExtra("IS_DEV_MODE", false);
 
@@ -22,12 +26,14 @@ public class CardListActivity extends AppCompatActivity {
 
         View header = findViewById(R.id.mainHeader);
         if (header != null) {
-            ((TextView) header.findViewById(R.id.gameTitle)).setText(R.string.card_list_header);
+            ((TextView) header.findViewById(R.id.gameTitle)).setText(R.string.card_list);
         }
     }
 
     private void applyDeveloperTheme() {
         findViewById(R.id.cardListRoot).setBackgroundColor(getColor(R.color.light_grey));
     }
+
+
 }
 

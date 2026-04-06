@@ -26,12 +26,17 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private int devClickCount = 0;
     private int exitClickCount = 0;
     private boolean isDeveloperMode = false;
+    public static List<GameCard> cardList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
