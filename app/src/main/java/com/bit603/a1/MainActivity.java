@@ -14,8 +14,6 @@
 
 package com.bit603.a1;
 
-import static java.lang.Boolean.parseBoolean;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -46,16 +44,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        generateCardData();
+
         View header = findViewById(R.id.mainHeader);
         View footer = findViewById(R.id.footer);
 
         TextView appVersionName = footer.findViewById(R.id.appVersionName);
-        LinearLayout mainFooter = findViewById(R.id.mainFooter);
-        TextView developerModeText = findViewById(R.id.developerModeText);
+        LinearLayout mainFooter = footer.findViewById(R.id.mainFooter);
+        TextView developerModeText = footer.findViewById(R.id.developerModeText);
 
         View mainLayout = findViewById(R.id.main_layout);
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
-        CardView blueHeader = header.findViewById(R.id.blueHeader);
+        View blueHeader = header.findViewById(R.id.blueHeader);
 
         Button buttonCardList = findViewById(R.id.buttonCardList);
         /*Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);*/
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             if (!isDeveloperMode) {
                 devClickCount++;
                 if (devClickCount == 7) {
-                    activateDeveloperMode(mainLayout, mainButtons, mainFooter, blueHeader, developerModeText);
+                    activateDeveloperMode(mainLayout, mainButtons, mainFooter, (CardView) blueHeader, developerModeText);
                     isDeveloperMode = true;
                     devClickCount = 0;
                     Toast.makeText(this, "Developer Mode Activated", Toast.LENGTH_SHORT).show();
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        generateCardData();
+
     }
 
     private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, CardView blueHeader, TextView developerModeText) {
