@@ -41,13 +41,21 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        TextView appVersionName = findViewById(R.id.appVersionName);
+        View header = findViewById(R.id.mainHeader);
+        View footer = findViewById(R.id.footer);
+
+        TextView appVersionName = footer.findViewById(R.id.appVersionName);
+        LinearLayout mainFooter = findViewById(R.id.mainFooter);
+        TextView developerModeText = findViewById(R.id.developerModeText);
+
         View mainLayout = findViewById(R.id.main_layout);
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
-        LinearLayout mainFooter = findViewById(R.id.mainFooter);
-        CardView blueHeader = findViewById(R.id.blueHeader);
-        TextView developerModeText = findViewById(R.id.developerModeText);
-        View header = findViewById(R.id.mainHeader);
+        CardView blueHeader = header.findViewById(R.id.blueHeader);
+
+
+
+        Button buttonCardList = findViewById(R.id.buttonCardList);
+        Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);
 
         TextView title = header.findViewById(R.id.gameTitle);
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);

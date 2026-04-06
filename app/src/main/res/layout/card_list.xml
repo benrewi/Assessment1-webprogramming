@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
+    android:id="@+id/cardListRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
@@ -15,35 +15,7 @@
         layout="@layout/layout_header"
         android:id="@+id/mainHeader"/>
 
-    <LinearLayout
-        android:id="@+id/mainButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginHorizontal="50dp"
 
-        app:layout_constraintBottom_toTopOf="@id/footer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/buttonCardList"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/btn_card_list"
-            android:textSize="22sp"
-            android:backgroundTint="@color/main_blue" />
-
-        <Button
-            android:id="@+id/buttonCardStatistics"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/btn_card_statistics"
-            android:textSize="22sp"
-            android:backgroundTint="@color/main_blue" />
-    </LinearLayout>
 
     <include
         android:id="@+id/footer"
