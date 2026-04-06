@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+
 
 public class CardListActivity extends AppCompatActivity {
+    private boolean isDeveloperMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +20,9 @@ public class CardListActivity extends AppCompatActivity {
         setContentView(R.layout.card_list);
 
 
-        boolean isDevModeActive = getIntent().getBooleanExtra("IS_DEV_MODE", false);
+        isDeveloperMode = getIntent().getBooleanExtra("IS_DEV_MODE", false);
 
-        if (isDevModeActive) {
+        if (isDeveloperMode) {
             applyDeveloperTheme();
         }
 
@@ -28,6 +30,12 @@ public class CardListActivity extends AppCompatActivity {
         if (header != null) {
             ((TextView) header.findViewById(R.id.gameTitle)).setText(R.string.card_list);
         }
+
+        RecyclerView cardRecyclerView = findViewById(R.id.cardListRecycler);
+        cardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        GameCardScrollerRecyclerViewAdapter adapter = new GameCardScrollerRecyclerViewAdapter(MainActivity.cardList);
+        cardRecyclerView.setAdapter(adapter);
+
     }
 
     private void applyDeveloperTheme() {

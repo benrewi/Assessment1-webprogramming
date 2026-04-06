@@ -14,6 +14,8 @@
 
 package com.bit603.a1;
 
+import static java.lang.Boolean.parseBoolean;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        generateCardData();
     }
 
     private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, CardView blueHeader, TextView developerModeText) {
@@ -122,5 +126,45 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void generateCardData(){
+        cardList = new ArrayList<>();
+
+        String[] ids = getResources().getStringArray(R.array.card_idArray);
+        String[] names = getResources().getStringArray(R.array.nameArray);
+        String[] effects = getResources().getStringArray(R.array.effectArray);
+        String[] levels = getResources().getStringArray(R.array.levelArray);
+        String[] battlePowers = getResources().getStringArray(R.array.battlePowerArray);
+        String[] playCosts = getResources().getStringArray(R.array.playCostArray);
+        String[] elements = getResources().getStringArray(R.array.elementArray);
+        String[] artists = getResources().getStringArray(R.array.artistArray);
+        String[] unfinished = getResources().getStringArray(R.array.unfinishedArray);
+
+        for (int i = 0; i < ids.length; i++) {
+            GameCard card = new GameCard(
+                ids[i],
+                names[i],
+                effects[i],
+                Integer.parseInt(levels[i]),
+                Integer.parseInt(battlePowers[i]),
+                Integer.parseInt(playCosts[i]),
+                elementNameToInt(elements[i]),
+                artists[i],
+                Boolean.parseBoolean(unfinished[i])
+            );
+            cardList.add(card);
+        }
+
+    }
+
+    private int elementNameToInt (String elementName){
+        switch (elementName){
+            case "Earth": return 1;
+            case "Wind": return 2;
+            case "Fire": return 3;
+            case "Water": return 4;
+            default: return 0;
+        }
     }
 }
