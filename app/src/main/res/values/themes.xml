@@ -1,13 +1,26 @@
+<!-- Adding the default theming for the app, aligning default colours
+this the main theming of the app-->
+
 <resources>
 
+    <!-- Default settings for the themes.xml file, specifying the name for the styling, and -->
     <style name="Base.Theme.Assessment1"
         parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Specifying the primary colour for the app - blue. Will be automatically used for buttons etc.-->
         <item name="colorPrimary">@color/main_blue</item>
+
+        <!-- Settings the primary variant. Am not using secondary colours, so this is the same as primary -->
         <item name="colorPrimaryVariant">@color/main_blue</item>
+
+        <!-- Setting the main colour for the text, and other items that will go on top of any primary colour as a default setting-->
         <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Setting the status bar colour to the main theming colour, so the status bar stays consistent with theming-->
         <item name="android:statusBarColor">@color/main_blue</item>
+
+        <!-- Setting the status bar theming to false, so that white icons will be used in the status bar-->
         <item name="android:windowLightStatusBar">false</item>
     </style>
-
     <style name="Theme.Assessment1" parent="Base.Theme.Assessment1" />
 </resources>
