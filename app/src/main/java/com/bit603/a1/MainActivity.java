@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
         CardView blueHeader = header.findViewById(R.id.blueHeader);
 
-
-
         Button buttonCardList = findViewById(R.id.buttonCardList);
         Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);
 
@@ -61,12 +59,9 @@ public class MainActivity extends AppCompatActivity {
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);
         TextView developmentWarning = header.findViewById(R.id.developmentWarning);
 
-
         title.setText(R.string.card_game_name);
         gameVersionText.setText(R.string.game_version);
         developmentWarning.setText(R.string.development_warning);
-
-
 
         buttonCardList.setOnClickListener(v -> {
             Intent intent = new Intent(this, CardListActivity.class);
@@ -75,10 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
-
-
-
-
 
         appVersionName.setOnClickListener(view -> {
             if (!isDeveloperMode) {

@@ -25,12 +25,12 @@ public class CardListActivity extends AppCompatActivity {
 
         View header = findViewById(R.id.mainHeader);
         if (header != null) {
-            ((TextView)header.findViewById(R.id.gameTitle)).setText("Card List");
+            ((TextView) header.findViewById(R.id.gameTitle)).setText("Card List");
         }
     }
 
     private void applyDeveloperTheme() {
         findViewById(R.id.cardListRoot).setBackgroundColor(getColor(R.color.light_grey));
     }
-    }
+}
 
