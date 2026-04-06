@@ -12,6 +12,7 @@
     <string name="card_details">Card Details</string>
     <string name="developer_mode_text">Developer mode…</string>
     <string name="main_image_description">Purple goblin warrior holding a spiked axe</string>
+    <string name="back_button">back_button</string>
 
 
     <string-array name="card_idArray">

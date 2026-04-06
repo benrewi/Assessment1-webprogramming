@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         View mainLayout = findViewById(R.id.main_layout);
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
-        View blueHeader = header.findViewById(R.id.blueHeader);
+        View mainHeader = header.findViewById(R.id.mainHeader);
 
         Button buttonCardList = findViewById(R.id.buttonCardList);
         /*Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);*/
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             if (!isDeveloperMode) {
                 devClickCount++;
                 if (devClickCount == 7) {
-                    activateDeveloperMode(mainLayout, mainButtons, mainFooter, (CardView) blueHeader, developerModeText);
+                    activateDeveloperMode(mainLayout, mainButtons, mainFooter, mainHeader, developerModeText);
                     isDeveloperMode = true;
                     devClickCount = 0;
                     Toast.makeText(this, "Developer Mode Activated", Toast.LENGTH_SHORT).show();
@@ -100,31 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, CardView blueHeader, TextView developerModeText) {
-        int light_grey = getColor(R.color.light_grey);
-        int black = getColor(R.color.black);
-
-        mainLayout.setBackgroundColor(light_grey);
-        blueHeader.setCardBackgroundColor(black);
+    private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, View mainHeader, TextView developerModeText) {
+        Themes.applyDeveloperThemeHeader(this, mainLayout, mainHeader);
+        Themes.applyDeveloperThemeButtons(this, buttonGroup);
+        Themes.applyDeveloperThemeFooter(this, mainFooter);
         developerModeText.setText(R.string.developer_mode_text);
-
-
-
-        for(int i = 0; i < buttonGroup.getChildCount(); i++){
-            View child = buttonGroup.getChildAt(i);
-            if (child instanceof Button){
-                Button btn = (Button) child;
-                btn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(black));
-            }
-        }
-
-        for (int i = 0; i < mainFooter.getChildCount(); i++) {
-            View child = mainFooter.getChildAt(i);
-            if (child instanceof TextView) {
-                TextView tv = (TextView) child;
-                tv.setTextColor(black);
-            }
-        }
 
     }
 
