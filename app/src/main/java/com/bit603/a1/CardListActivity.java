@@ -3,21 +3,18 @@ package com.bit603.a1;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 public class CardListActivity extends AppCompatActivity {
-    private boolean isDevModeActive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_list);
 
-        isDevModeActive = getIntent().getBooleanExtra("IS_DEV_MODE", false);
+        boolean isDevModeActive = getIntent().getBooleanExtra("IS_DEV_MODE", false);
 
         if (isDevModeActive) {
             applyDeveloperTheme();
@@ -25,7 +22,7 @@ public class CardListActivity extends AppCompatActivity {
 
         View header = findViewById(R.id.mainHeader);
         if (header != null) {
-            ((TextView) header.findViewById(R.id.gameTitle)).setText("Card List");
+            ((TextView) header.findViewById(R.id.gameTitle)).setText(R.string.card_list_header);
         }
     }
 

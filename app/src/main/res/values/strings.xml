@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Assessment1</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">Assessment1</string>
     <string name="card_game_name">Card Vault Companion</string>
     <string name="developer_name">Developer: Ben Rewi</string>
     <string name="development_warning">This app is currently in development</string>
@@ -9,7 +9,9 @@
     <string name="developer_mode_activated">Developer mode activated</string>
     <string name="btn_card_list">Card List</string>
     <string name="btn_card_statistics">Card Statistics</string>
-    <string name="developer_mode_text">Developer mode...</string>
+    <string name="developer_mode_text">Developer mode…</string>
+    <string name="main_image_description">Purple goblin warrior holding a spiked axe</string>
+    <string name="card_list_header">Card List</string>
 
     <string-array name="card_idArray">
         <item>001</item>

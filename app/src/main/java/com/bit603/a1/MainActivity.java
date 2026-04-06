@@ -25,9 +25,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         CardView blueHeader = header.findViewById(R.id.blueHeader);
 
         Button buttonCardList = findViewById(R.id.buttonCardList);
-        Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);
+        /*Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);*/
 
         TextView title = header.findViewById(R.id.gameTitle);
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);
@@ -96,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
     private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, CardView blueHeader, TextView developerModeText) {
         int light_grey = getColor(R.color.light_grey);
         int black = getColor(R.color.black);
-        int white = getColor(R.color.white);
 
         mainLayout.setBackgroundColor(light_grey);
         blueHeader.setCardBackgroundColor(black);
