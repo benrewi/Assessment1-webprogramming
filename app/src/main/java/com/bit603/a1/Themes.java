@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView;
 
 public class Themes {
 
-    public static void applyDeveloperThemeHeader(Context context, View layout, View header) {
+    public static void applyDevThemeHeader(Context context, View layout, View header) {
         int light_grey = context.getColor(R.color.light_grey);
         int black = context.getColor(R.color.black);
         int white = context.getColor(R.color.white);
@@ -19,13 +19,13 @@ public class Themes {
         layout.setBackgroundColor(light_grey);
         if (header != null) {
 
-            View mainHeader = header.findViewById(R.id.mainHeader);
+            View blueHeader = header.findViewById(R.id.blueHeader);
             CardView titleCard = header.findViewById(R.id.titleCard);
             TextView gameTitle = header.findViewById(R.id.gameTitle);
 
 
-            if (mainHeader != null)
-                mainHeader.setBackgroundResource(R.drawable.header_background_devmode);
+            if (blueHeader != null)
+                blueHeader.setBackgroundResource(R.drawable.header_background_devmode);
             if (titleCard != null)
                 titleCard.setCardBackgroundColor(white);
             if (gameTitle != null)
@@ -34,7 +34,7 @@ public class Themes {
     }
 
 
-            public static void applyDeveloperThemeButtons(Context context, LinearLayout btnGroup){
+            public static void applyDevThemeButtons(Context context, LinearLayout btnGroup){
                 int black = context.getColor(R.color.black);
 
                 for (int i = 0; i < btnGroup.getChildCount(); i++) {
@@ -46,7 +46,7 @@ public class Themes {
                 }
             }
 
-            public static void applyDeveloperThemeFooter (Context context, LinearLayout footer){
+            public static void applyDevThemeFooter (Context context, LinearLayout footer){
                 int black = context.getColor(R.color.black);
                 for (int i = 0; i < footer.getChildCount(); i++) {
                     View child = footer.getChildAt(i);
@@ -55,10 +55,10 @@ public class Themes {
                         tv.setTextColor(black);
                     }
                 }
-                TextView developerModeText = footer.findViewById(R.id.developerModeText);
-                if (developerModeText != null) {
-                    developerModeText.setText(R.string.developer_mode_text);
-                    developerModeText.setTextColor(black);
+                TextView devModeText = footer.findViewById(R.id.devModeText);
+                if (devModeText != null) {
+                    devModeText.setText(R.string.dev_mode_text);
+                    devModeText.setTextColor(black);
                 }
             }
         }

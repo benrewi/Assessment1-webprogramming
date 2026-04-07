@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int devClickCount = 0;
     private int exitClickCount = 0;
-    private boolean isDeveloperMode = false;
+    private boolean isDevMode = false;
     public static List<GameCard> cardList;
 
 
@@ -50,37 +50,36 @@ public class MainActivity extends AppCompatActivity {
 
         TextView appVersionName = footer.findViewById(R.id.appVersionName);
         LinearLayout mainFooter = footer.findViewById(R.id.mainFooter);
-        TextView developerModeText = footer.findViewById(R.id.developerModeText);
+        TextView devModeText = footer.findViewById(R.id.devModeText);
 
         View mainLayout = findViewById(R.id.main_layout);
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
-        View mainHeader = header.findViewById(R.id.mainHeader);
 
         Button buttonCardList = findViewById(R.id.buttonCardList);
         /*Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);*/
 
         TextView title = header.findViewById(R.id.gameTitle);
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);
-        TextView developmentWarning = header.findViewById(R.id.developmentWarning);
+        TextView devWarning = header.findViewById(R.id.devWarning);
 
         title.setText(R.string.card_game_name);
         gameVersionText.setText(R.string.game_version);
-        developmentWarning.setText(R.string.development_warning);
+        devWarning.setText(R.string.dev_mode_text);
 
         buttonCardList.setOnClickListener(v -> {
             Intent intent = new Intent(this, CardListActivity.class);
 
-            intent.putExtra("IS_DEV_MODE", isDeveloperMode);
+            intent.putExtra("IS_DEV_MODE", isDevMode);
 
             startActivity(intent);
         });
 
         appVersionName.setOnClickListener(view -> {
-            if (!isDeveloperMode) {
+            if (!isDevMode) {
                 devClickCount++;
                 if (devClickCount == 7) {
-                    activateDeveloperMode(mainLayout, mainButtons, mainFooter, mainHeader, developerModeText);
-                    isDeveloperMode = true;
+                    activateDevMode(mainLayout, mainButtons, mainFooter, header, devModeText);
+                    isDevMode = true;
                     devClickCount = 0;
                     Toast.makeText(this, "Developer Mode Activated", Toast.LENGTH_SHORT).show();
 
@@ -89,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 exitClickCount++;
                 if (exitClickCount == 7) {
                     recreate();
-                    isDeveloperMode = false;
+                    isDevMode = false;
                     exitClickCount = 0;
                     Toast.makeText(this, "Developer Mode Deactivated", Toast.LENGTH_SHORT).show();
                 }
@@ -99,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void activateDeveloperMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, View mainHeader, TextView developerModeText) {
-        Themes.applyDeveloperThemeHeader(this, mainLayout, mainHeader);
-        Themes.applyDeveloperThemeButtons(this, buttonGroup);
-        Themes.applyDeveloperThemeFooter(this, mainFooter);
-        developerModeText.setText(R.string.developer_mode_text);
+    private void activateDevMode(View mainLayout, LinearLayout buttonGroup, LinearLayout mainFooter, View header, TextView devModeText) {
+        Themes.applyDevThemeHeader(this, mainLayout, header);
+        Themes.applyDevThemeButtons(this, buttonGroup);
+        Themes.applyDevThemeFooter(this, mainFooter);
+        devModeText.setText(R.string.dev_mode_text);
 
     }
 

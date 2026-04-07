@@ -1,10 +1,11 @@
 package com.bit603.a1;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 public class CardListActivity extends AppCompatActivity {
-    private boolean isDeveloperMode = false;
+    private boolean isDevMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,10 @@ public class CardListActivity extends AppCompatActivity {
         setContentView(R.layout.card_list);
 
 
+        isDevMode = getIntent().getBooleanExtra("IS_DEV_MODE", false);
 
-
-        isDeveloperMode = getIntent().getBooleanExtra("IS_DEV_MODE", false);
-
-        if (isDeveloperMode) {
-            applyDeveloperTheme();
+        if (isDevMode) {
+            applyDevTheme();
         }
 
         View header = findViewById(R.id.mainHeader);
@@ -42,23 +41,24 @@ public class CardListActivity extends AppCompatActivity {
 
         RecyclerView cardRecyclerView = findViewById(R.id.cardListRecycler);
         cardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        GameCardScrollerRecyclerViewAdapter adapter = new GameCardScrollerRecyclerViewAdapter(MainActivity.cardList);
+
+        GameCardScrollerRecyclerViewAdapter adapter = new GameCardScrollerRecyclerViewAdapter(MainActivity.cardList, isDevMode, card -> {
+            Intent intent = new Intent(this, CardDetailsActivity.class);
+            intent.putExtra("CARD_ID", card.getCardId());
+            intent.putExtra("IS_DEV_MODE", isDevMode);
+            startActivity(intent);
+        });
+
         cardRecyclerView.setAdapter(adapter);
 
     }
 
-    private void applyDeveloperTheme() {
+    private void applyDevTheme() {
         View rootLayout = findViewById(R.id.cardListRoot);
         View header = findViewById(R.id.mainHeader);
-        View footer = findViewById(R.id.footer);
-        LinearLayout mainFooter = footer.findViewById(R.id.mainFooter);
 
-        Themes.applyDeveloperThemeHeader(this, rootLayout, header);
-        Themes.applyDeveloperThemeFooter(this, mainFooter);
+        Themes.applyDevThemeHeader(this, rootLayout, header);
 
 
     }
-
-
 }
-

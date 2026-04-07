@@ -58,7 +58,7 @@ public class GameCard {
         }
     }
 
-    public String getCardID(){
+    public String getCardId(){
         return card_id;
     }
 

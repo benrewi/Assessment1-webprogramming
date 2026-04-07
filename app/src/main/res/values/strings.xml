@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">Assessment 1</string>
     <string name="card_game_name">Card Vault Companion</string>
-    <string name="developer_name">Developer: Ben Rewi</string>
+    <string name="dev_name">Developer: Ben Rewi</string>
     <string name="development_warning">This app is currently in development</string>
     <string name="authors">Game creators: James Dean and Tim Smith</string>
     <string name="app_version">App version 1.0</string>
     <string name="game_version">Game version: 1.0</string>
-    <string name="developer_mode_activated">Developer mode activated</string>
+    <string name="dev_mode_activated">Developer mode activated</string>
     <string name="card_list">Card List</string>
     <string name="card_statistics">Card Statistics</string>
     <string name="card_details">Card Details</string>
-    <string name="developer_mode_text">Developer mode…</string>
+    <string name="dev_mode_text">Developer mode…</string>
     <string name="main_image_description">Purple goblin warrior holding a spiked axe</string>
     <string name="back_button">back_button</string>
+    <string name="card_image_placeholder">Card image placeholder"</string>
 
 
     <string-array name="card_idArray">

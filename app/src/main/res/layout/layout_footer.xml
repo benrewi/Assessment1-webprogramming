@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/developerModeText"
+            android:id="@+id/devModeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -34,10 +34,10 @@
             android:textColor="#808080" />
 
         <TextView
-            android:id="@+id/developerName"
+            android:id="@+id/devName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/developer_name"
+            android:text="@string/dev_name"
             android:textSize="14sp"
             android:textColor="#808080" />
 
