@@ -1,3 +1,20 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This activity calculates and displays statistics about the game card data. It uses a LinkedHashMap to store the values and displays
+ * them in a recycler view. The statistics shown are dependant of the mode of the app (dve mode v not dev mode). Each statistic
+ * is calculated using a specific method/
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
+
 package com.bit603.a1;
 
 
@@ -51,7 +68,10 @@ public class CardStatisticsActivity extends AppCompatActivity {
     private void generateStats() {
         statsMap.clear();
 
-        statsMap.put("Total Cards: ", String.valueOf(calculateTotalCards()));
+        if(!isDevMode){
+            statsMap.put("Total Cards: ", String.valueOf(calculateTotalCards()));
+        }
+
         statsMap.put("Highest BP: ", String.valueOf(calculateHighestBP()));
         statsMap.put("Lowest BP: ", String.valueOf(calculateLowestBP()));
         statsMap.putAll(calculateElementStats());
@@ -156,8 +176,10 @@ public class CardStatisticsActivity extends AppCompatActivity {
     private HashMap<String, String> calculateArtistStats() {
         HashMap<String, Integer> artistCounts = new HashMap<>();
         for (GameCard card : MainActivity.cardList) {
-            String artistName = card.getArtistName();
-            artistCounts.put(artistName, artistCounts.getOrDefault(artistName, 0) + 1);
+            if (!card.getUnfinished()) {
+                String artistName = card.getArtistName();
+                artistCounts.put(artistName, artistCounts.getOrDefault(artistName,0) + 1);
+            }
         }
         LinkedHashMap<String, String> artistStats = new LinkedHashMap<>();
         for (String artist : artistCounts.keySet()) {

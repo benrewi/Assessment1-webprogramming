@@ -1,3 +1,19 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This handles the display of the list of statistics in the Card Statistics screen. It takes the calculated stats
+ * and displays them in a scrollable list. They're displayed in the same order they're added.
+ *
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
 package com.bit603.a1;
 
 import android.view.LayoutInflater;

@@ -3,11 +3,13 @@
 
  * Name: Ben Rewi
  * ID: 5124830
- * Created: 22nd March 2026
+ * Created: 9th April 2026
 
- * This is the main class. I will add additional description later.
- *
-
+ * This is the entry point of the card vault
+ *This app is currently in development, and displays game and app version information, authors, and a button to activate developer mode.
+ * It provides navigation to the card list and card statistics activities, as well as managing the developer mode.
+ * Developer mode is activated by selecting the app version 7 times. The developer mode passes the state to other activities via intent.
+ *This also hosts the generation of card data that populates the card list throughout the app
  * @author Ben Rewi
  * @version 1.0
  */
@@ -60,11 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView title = header.findViewById(R.id.gameTitle);
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);
-        TextView devWarning = header.findViewById(R.id.devWarning);
 
         title.setText(R.string.card_game_name);
         gameVersionText.setText(R.string.game_version);
-        devWarning.setText(R.string.dev_mode_text);
 
         buttonCardList.setOnClickListener(v -> {
             Intent intent = new Intent(this, CardListActivity.class);
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     isDevMode = false;
                     exitClickCount = 0;
                     Toast.makeText(this, "Developer Mode Deactivated", Toast.LENGTH_SHORT).show();
+                    recreate();
                 }
             }
         });

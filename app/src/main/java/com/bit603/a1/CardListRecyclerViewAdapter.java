@@ -1,3 +1,20 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This is the RecyclerView adapter for the Card List activity. It takes a list of GameCards and displays them in a scrollable list.
+ * It also has conditional filtering to show or hide cards based on whether they're finished or unfinished,
+ * as unfinished cards should not show in the normal view.
+
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
 package com.bit603.a1;
 
 import android.graphics.Color;

@@ -1,3 +1,20 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This is the class that provides static methods to apply the developer mode theme across all of the activities.
+ * It modifies the background colour and main heading colours, as also button colours. This helps to provide
+ * a consistent experience for developer mode across the app, to help users understand they're in developer mode.
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
+
 package com.bit603.a1;
 
 import android.content.Context;

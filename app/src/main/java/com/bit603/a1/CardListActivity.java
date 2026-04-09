@@ -1,3 +1,18 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This displays a scrollable list for the game cards using a RecyclerView. It filters out unfinished cards in normal mode
+ * and shows all cards in developer mode. It also allows the user to navigate to the CardDetailsActivity when a card is tapped,
+ * which passes the ID and developer mode state via intent.
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
 package com.bit603.a1;
 
 

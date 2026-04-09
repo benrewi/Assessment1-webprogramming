@@ -1,3 +1,21 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This is the activity that displays the full information of a game card.
+ * It received the ID of the card via intent, and retrieves the corresponding GameCard object from the static card list in
+ * MainActivity. It then populates the card details on the screen, and applies element based colouring, while also
+ * supporting developer mode.
+
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
 package com.bit603.a1;
 
 import android.graphics.Color;
@@ -55,12 +73,12 @@ public class CardDetailsActivity extends AppCompatActivity {
         playCostText.setText(String.valueOf(card.getPlayCost()));
 
         TextView battlePowerText = findViewById(R.id.battlePowerText);
-        battlePowerText.setText(String.valueOf("BP " + card.getBattlePower()));
+        battlePowerText.setText("BP " + card.getBattlePower());
 
         TextView cardEffectText = findViewById(R.id.cardEffectText);
         cardEffectText.setText(card.getEffectDescription());
         TextView cardLevelText = findViewById(R.id.cardLevelText);
-        cardLevelText.setText("LVL. "+ String.valueOf(card.getLevel()));
+        cardLevelText.setText("LVL. " + card.getLevel());
         TextView cardNameText = findViewById(R.id.cardNameText);
         cardNameText.setText(card.getName());
         TextView cardId = findViewById(R.id.cardId);
@@ -76,7 +94,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         ImageView cardImage = findViewById(R.id.cardImage);
         cardImage.setImageResource(card.getCardDetailsImages());
 
-        elementText.setTextColor(Color.parseColor(card.getElementColour()));
+
         androidx.cardview.widget.CardView gameCardView = findViewById(R.id.gameCardView);
         View cardDetail = findViewById(R.id.cardDetail);
 

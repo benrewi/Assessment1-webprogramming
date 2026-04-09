@@ -1,3 +1,19 @@
+/**
+ * BIT603 Assessment 1
+
+ * Name: Ben Rewi
+ * ID: 5124830
+ * Created: 9th April 2026
+
+ * This represents a single game card in the app. It stores all the card data, including id, name, effect, description, level, battle power,
+ * play cost, element type, artist name, and the finished/unfinished state of the card. It also provides helper methods to convert the
+ * integers in to string elements, and contains the hex colours for both the cards, and also additional background colours.
+
+ * @author Ben Rewi
+ * @version 1.0
+ */
+
+
 package com.bit603.a1;
 
 public class GameCard {
