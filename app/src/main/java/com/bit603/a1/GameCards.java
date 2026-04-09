@@ -1,6 +1,6 @@
 package com.bit603.a1;
 
-public class GameCard {
+public class GameCards {
 
     private String card_id;
     private String name;
@@ -11,10 +11,8 @@ public class GameCard {
     private int element;
     private String artist_name;
     private boolean unfinished;
-    private int cardDetailsImages;
 
-
-    public GameCard(String card_id, String name, String effect_description, int level, int battle_power, int play_cost, int element, String artist_name, boolean unfinished, int cardDetailsImages){
+    public void gameCards(String card_id, String name, String effect_description, int level, int battle_power, int play_cost, int element, String artist_name, boolean unfinished){
         this.card_id = card_id;
         this.name = name;
         this.effect_description = effect_description;
@@ -24,61 +22,9 @@ public class GameCard {
         this.element = element;
         this.artist_name = artist_name;
         this.unfinished = unfinished;
-        this.cardDetailsImages = cardDetailsImages;
     }
 
-    public String getElementName(){
-        switch (this.element) {
-            case 0:
-                return "Neutral";
-            case 1:
-                return "Earth";
-            case 2:
-                return "Wind";
-            case 3:
-                return "Fire";
-            case 4:
-                return "Water";
-            default:
-                return "Unknown";
-        }
-    }
-
-    public String getElementColour() {
-        switch (this.element) {
-            case 0:
-                return "#d4d4d4";
-            case 1:
-                return "#57503c";
-            case 2:
-                return "#98b08d";
-            case 3:
-                return "#691f1f";
-            case 4:
-                return "#4d7b9e";
-            default:
-                return "#000000";
-        }
-    }
-
-    public String getFadedElementColour() {
-        switch (this.element) {
-            case 0:
-                return "#DBDBDB";
-            case 1:
-                return "#C6C1AE";
-            case 2:
-                return "#CAD5C3";
-            case 3:
-                return "#EABDBD";
-            case 4:
-                return "#B3CADB";
-            default:
-                return "#000000";
-        }
-    }
-
-    public String getCardId(){
+    public String getCardID(){
         return card_id;
     }
 
@@ -113,10 +59,6 @@ public class GameCard {
     public boolean getUnfinished(){
         return unfinished;
     }
-    public int getCardDetailsImages(){
-        return cardDetailsImages;
-    }
-
 
     public void setCardID(String card_id){
         this.card_id = card_id;
@@ -151,10 +93,6 @@ public void setEffectDescription(String effect_description){
 
     public void setUnfinished(boolean unfinished){
         this.unfinished = unfinished;
-    }
-
-    public void setCardDetailsImages(int cardDetailsImages) {
-        this.cardDetailsImages = cardDetailsImages;
     }
 
 }

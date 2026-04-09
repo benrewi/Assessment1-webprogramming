@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.card_details);
+
 
         isDevMode = getIntent().getBooleanExtra("IS_DEV_MODE", false);
 
@@ -58,7 +60,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         TextView cardEffectText = findViewById(R.id.cardEffectText);
         cardEffectText.setText(card.getEffectDescription());
         TextView cardLevelText = findViewById(R.id.cardLevelText);
-        cardLevelText.setText(String.valueOf(card.getLevel()));
+        cardLevelText.setText("LVL. "+ String.valueOf(card.getLevel()));
         TextView cardNameText = findViewById(R.id.cardNameText);
         cardNameText.setText(card.getName());
         TextView cardId = findViewById(R.id.cardId);
@@ -70,6 +72,18 @@ public class CardDetailsActivity extends AppCompatActivity {
         TextView elementText= findViewById(R.id.cardElementText);
         elementText.setText(card.getElementName());
         elementText.setTextColor(Color.parseColor(card.getElementColour()));
+
+        ImageView cardImage = findViewById(R.id.cardImage);
+        cardImage.setImageResource(card.getCardDetailsImages());
+
+        elementText.setTextColor(Color.parseColor(card.getElementColour()));
+        androidx.cardview.widget.CardView gameCardView = findViewById(R.id.gameCardView);
+        View cardDetail = findViewById(R.id.cardDetail);
+
+
+        cardDetail.setBackgroundColor(Color.parseColor(card.getElementColour()));
+        gameCardView.setCardBackgroundColor(Color.parseColor(card.getFadedElementColour()));
+        getWindow().getDecorView().setBackgroundColor(Color.parseColor(card.getElementColour()));
     }
 
     private void applyDevTheme(){

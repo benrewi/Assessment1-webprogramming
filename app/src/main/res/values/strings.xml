@@ -16,6 +16,7 @@
     <string name="card_image_placeholder">Card image placeholder"</string>
 
 
+
     <string-array name="card_idArray">
         <item>001</item>
         <item>002</item>
@@ -132,6 +133,19 @@
         <item>true</item>
         <item>true</item>
     </string-array>
+
+    <array name="cardDetailsImagesArray">
+        <item>@drawable/img_001</item>
+        <item>@drawable/img_002</item>
+        <item>@drawable/img_003</item>
+        <item>@drawable/img_004</item>
+        <item>@drawable/img_005</item>
+        <item>@drawable/img_006</item>
+        <item>@drawable/img_007</item>
+        <item>@drawable/img_008</item>
+        <item>@drawable/img_009</item>
+        <item>@drawable/img_010</item>
+    </array>
 
 
 </resources>

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedHashMap;
 
 
 public class CardListActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class CardListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.card_list);
+
 
 
         isDevMode = getIntent().getBooleanExtra("IS_DEV_MODE", false);
@@ -42,7 +44,7 @@ public class CardListActivity extends AppCompatActivity {
         RecyclerView cardRecyclerView = findViewById(R.id.cardListRecycler);
         cardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        GameCardScrollerRecyclerViewAdapter adapter = new GameCardScrollerRecyclerViewAdapter(MainActivity.cardList, isDevMode, card -> {
+        CardListRecyclerViewAdapter adapter = new CardListRecyclerViewAdapter(MainActivity.cardList, isDevMode, card -> {
             Intent intent = new Intent(this, CardDetailsActivity.class);
             intent.putExtra("CARD_ID", card.getCardId());
             intent.putExtra("IS_DEV_MODE", isDevMode);

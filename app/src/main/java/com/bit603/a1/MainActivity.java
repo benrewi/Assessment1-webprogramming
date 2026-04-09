@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout mainButtons= findViewById(R.id.mainButtons);
 
         Button buttonCardList = findViewById(R.id.buttonCardList);
-        /*Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);*/
+        Button buttonCardStatistics = findViewById(R.id.buttonCardStatistics);
 
         TextView title = header.findViewById(R.id.gameTitle);
         TextView gameVersionText = header.findViewById(R.id.gameVersionText);
@@ -73,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
+
+        buttonCardStatistics.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CardStatisticsActivity.class);
+            intent.putExtra("IS_DEV_MODE", isDevMode);
+            startActivity(intent);
+        });
+
 
         appVersionName.setOnClickListener(view -> {
             if (!isDevMode) {
@@ -118,8 +125,13 @@ public class MainActivity extends AppCompatActivity {
         String[] elements = getResources().getStringArray(R.array.elementArray);
         String[] artists = getResources().getStringArray(R.array.artistArray);
         String[] unfinished = getResources().getStringArray(R.array.unfinishedArray);
+        android.content.res.TypedArray cardDetailsImages = getResources().obtainTypedArray(R.array.cardDetailsImagesArray);
+
+
 
         for (int i = 0; i < ids.length; i++) {
+            int currentImageID = cardDetailsImages.getResourceId(i, -1);
+
             GameCard card = new GameCard(
                 ids[i],
                 names[i],
@@ -129,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 Integer.parseInt(playCosts[i]),
                 elementNameToInt(elements[i]),
                 artists[i],
-                Boolean.parseBoolean(unfinished[i])
+                Boolean.parseBoolean(unfinished[i]),
+                    currentImageID
             );
             cardList.add(card);
         }
